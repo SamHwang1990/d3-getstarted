@@ -1,0 +1,14 @@
+extends ../layout
+
+block main
+    div
+    div
+    div
+
+block scripts
+    script.
+        d3.selectAll('div')
+                .attr('class', 'red box')
+                .each(function(d, i) {
+                    d3.select(this).append('h2').text(i);
+                });

@@ -1,0 +1,13 @@
+extends ../layout
+
+block scripts
+    script.
+        var body = d3.select('body');
+
+        body.append('section').attr('id', 'section1')
+                .append('div').classed('blue box', true)
+                .append('p').text('dynamic blue box');
+
+        body.append('section').attr('id', 'section2')
+            .append('div').classed('red box', true)
+            .append('p').text('dynamic red box');

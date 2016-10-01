@@ -1,0 +1,18 @@
+extends ../layout
+
+block main
+    section(id='section1')
+        div
+            p blue box
+    section(id='section2')
+        aside
+            p red box
+            div sub div
+
+block scripts
+    script.
+        // d3 支持css 选择器,比如下面使用子选择器
+        d3.select('#section1 > div').attr('class', 'blue box');
+
+        // 下面是后代选择器,不仅仅是子选择,相当于css 里的 #section2 div
+        d3.select('#section2').select('div').attr('class', 'red box');

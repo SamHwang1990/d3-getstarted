@@ -1,0 +1,15 @@
+extends ../layout
+
+block main
+    p(id='target')
+
+block scripts
+    script.
+        // select 只能选取匹配到的第一个元素
+        d3.select('#target').text('Hello world!');
+
+        // 常见的修饰函数
+        d3.select('p')
+                .attr('foo', 'bar')
+                .classed('goo', () => {return true;})
+                .style('font-size', '20px');

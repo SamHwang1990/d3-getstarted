@@ -1,0 +1,35 @@
+extends ../layout
+
+block scripts
+    script.
+        ;(function() {
+            var data = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10, 8];
+
+            function render(data) {
+                // Enter
+                // data 返回数据、图形元素并集的selection 对象
+                // enter 返回包含尚未被图形化的数据的selection 对象
+                d3.select('body').selectAll('div.h-bar').data(data)
+                        .enter().append('div').classed('h-bar', true).append('span');
+
+                // Update
+                d3.select('body').selectAll('div.h-bar').data(data).style('width', function(d) {
+                    return `${d*3}px`;
+                }).select('span').text(function(d) {
+                    return d;
+                });
+
+                // Exit
+                // exit 返回包含没有关联到任何数据的图形元素selection 对象
+                d3.select('body').selectAll('div.h-bar').data(data).exit().remove();
+            }
+
+            setInterval(function() {
+                data.shift();
+                data.push(Math.round(Math.random() * 100));
+
+                render(data);
+            }, 1500);
+
+            render(data);
+        }());
