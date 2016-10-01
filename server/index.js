@@ -23,6 +23,23 @@ router.get('/', function* (next) {
   yield this.render('index');
 });
 
+router.get('/chapters/03/data.json', function* (next) {
+  this.body = [
+    {
+      expense: 15,
+      category: 'Retail'
+    },
+    {
+      expense: 18,
+      category: 'Gas'
+    },
+    {
+      expense: 15,
+      category: 'Gas'
+    }
+  ]
+});
+
 router.get('/chapters/:chapter/:page', function* (next) {
   yield this.render(`${this.params.chapter}/${this.params.page}`, {
     chapter: this.params.chapter,

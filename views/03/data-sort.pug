@@ -1,0 +1,7 @@
+extends ../layout
+
+block main
+    div(class='control-group')
+        button(onclick='sort("expense")') Sort by Expense
+        button(onclick='sort("category")') Sort by Category
+        button(onclick='sort()') Clear

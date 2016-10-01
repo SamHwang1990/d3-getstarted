@@ -1,0 +1,44 @@
+extends ../layout
+
+block main
+    div.
+        <div class="code">var array = [3, 2, 11, 7, 6, 4, 10, 8, 15]</div>
+
+        <div>d3.min => <span id="min"></span></div>
+        <div>d3.max => <span id="max"></span></div>
+        <div>d3.extent => <span id="extent"></span></div>
+        <div>d3.sum => <span id="sum"></span></div>
+        <div>d3.median => <span id="median"></span></div>
+        <div>d3.mean => <span id="mean"></span></div>
+        <div>array.sort(d3.ascending) => <span id="asc"></span></div>
+        <div>array.sort(d3.descending) => <span id="desc"></span></div>
+        <div>d3.quantile(array.sort(d3.ascending), 0.25) => <span id="quantile"></span></div>
+        <div>d3.bisect(array.sort(d3.ascending), 6) => <span id="bisect"></span></div>
+
+        <div class="code">
+        <pre>
+            var records = [
+              {date: "2011-11-14T16:17:54Z", quantity: 2, total: 190, tip: 100, type: "tab"},
+              {date: "2011-11-14T16:20:19Z", quantity: 2, total: 190, tip: 100, type: "tab"},
+              {date: "2011-11-14T16:28:54Z", quantity: 1, total: 300, tip: 200, type: "visa"},
+              {date: "2011-11-14T16:30:43Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T16:48:46Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T16:53:41Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T16:54:06Z", quantity: 1, total: 100, tip: 0, type: "cash"},
+              {date: "2011-11-14T16:58:03Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T17:07:21Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T17:22:59Z", quantity: 2, total: 90, tip: 0, type: "tab"},
+              {date: "2011-11-14T17:25:45Z", quantity: 2, total: 200, tip: 0, type: "cash"},
+              {date: "2011-11-14T17:29:52Z", quantity: 1, total: 200, tip: 100, type: "visa"}
+            ];
+
+            d3.nest()
+                    .key(function(d){return d.type;})
+                    .key(function(d){return d.tip;})
+                    .entries(records) =>
+        </pre>
+        </div>
+
+        <div>
+            <pre id="nest"></pre>
+        </div>
