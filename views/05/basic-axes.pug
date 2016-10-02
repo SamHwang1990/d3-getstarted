@@ -1,0 +1,11 @@
+extends ../layout
+
+block title
+    title 坐标轴基础
+
+block main
+    div(class='control-group')
+        button(onclick='renderAll("bottom")') horizontal bottom
+        button(onclick='renderAll("top")') horizontal top
+        button(onclick='renderAll("left")') vertical left
+        button(onclick='renderAll("right")') vertical right
