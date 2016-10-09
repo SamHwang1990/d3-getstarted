@@ -1,0 +1,8 @@
+extends ../layout
+
+block main
+    div(class='control-group')
+        button(onclick='render(0)') Circle
+        button(onclick='render(100)') Annulus(Donut)
+        button(onclick='render(0, Math.PI)') Circular
+        button(onclick='render(100, Math.PI)') Annulus Sector
