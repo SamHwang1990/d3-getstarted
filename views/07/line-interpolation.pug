@@ -1,0 +1,22 @@
+extends ../layout
+
+block main
+    div.
+        <h4>Interpolation Mode:</h4>
+        <div class="control-group">
+            <button onclick="render('Linear')">linear</button>
+            <button onclick="render('LinearClosed')">linear-closed</button>
+            <button onclick="render('StepBefore')">step-before</button>
+            <button onclick="render('StepAfter')">step-after</button>
+            <button onclick="render('Basis')">basis</button>
+            <button onclick="render('BasisOpen')">basis-open</button>
+        </div>
+        <div class="control-group">
+            <button onclick="render('BasisClosed')">basis-closed</button>
+            <button onclick="render('Bundle')">bundle</button>
+            <button onclick="render('Cardinal')">cardinal</button>
+            <button onclick="render('CardinalOpen')">cardinal-open</button>
+            <button onclick="render('CardinalClosed')">cardinal-closed</button>
+            <button onclick="render('MonotoneX')">monotone-x</button>
+            <button onclick="render('MonotoneY')">monotone-y</button>
+        </div>
