@@ -12,6 +12,7 @@
   "author": "samhwang1990@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "co-fs": "^1.2.0",
     "d3": "^4.2.6",
     "debug": "^2.2.0",
     "koa": "^1.2.4",

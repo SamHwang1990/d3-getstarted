@@ -2,6 +2,8 @@
  * Created by sam on 16/10/14.
  */
 
+// todo: 对d3.stack() 的数据处理和渲染不特别熟,暂时跳过
+
 ;(function () {
 
   function lineChart() {

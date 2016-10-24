@@ -8,6 +8,7 @@ var koa = require('koa');
 var logger = require('koa-logger');
 var views = require('koa-views');
 var router = require('koa-router')();
+var fs = require('co-fs');
 // var debug = require('debug')('d3.js started server');
 
 var app = new koa();
@@ -38,6 +39,11 @@ router.get('/chapters/03/data.json', function* (next) {
       category: 'Gas'
     }
   ]
+});
+
+router.get('/data/flare.json', function* (next) {
+  var data = yield fs.readFile(path.resolve(__dirname, 'flare.json'), 'utf8');
+  this.body = data;
 });
 
 router.get('/chapters/:chapter/:page', function* (next) {
